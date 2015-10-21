@@ -15,6 +15,7 @@ Fluentd will be running and accepting messages on port 24224.  You can then star
  - 9200 Elasticsearch http
  - 9300 Elasticsearch transport
  - 24224 Fluentd
+ - 8888 Fluentd (http)
 
 Nginx is confirgured to proxy elastic search port 9200 to 80 which avoids some proxies blocking high ports.
 Kibana comes shipped with a config to use port 80 for elastic search so its ready to go.
