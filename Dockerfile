@@ -66,6 +66,8 @@ RUN apt-get install -y --no-install-recommends supervisor
 # Copy supervisor config.
 ADD config/etc/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 
+# Needed for configuring basic authentication the first time
+RUN apt-get install apache2-utils
 
 #CMD ["fluentd", "--conf=/etc/fluent/fluent.conf"]
 

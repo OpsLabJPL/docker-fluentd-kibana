@@ -13,7 +13,7 @@ then
   echo "Configure Kibana login..."
   printf "Username: "
   read username
-  htpasswd -c ${PASSFILE} ${username}
+  docker run --rm -ti -v ${LOCAL_CONFD}:/conf.d holometry htpasswd -c /conf.d/.htpasswd ${username}
 fi
 
 docker run --name=holometry --restart=always -d -p 9200:9200 -p 9300:9300 -p 24224:24224 -p 8888:8888 -p 80:80 -v /data:/data -v ${LOCAL_CONFD}:/etc/nginx/conf.d holometry
