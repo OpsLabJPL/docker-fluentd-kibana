@@ -3,8 +3,8 @@
 LOCAL_CONFD=${PWD}/conf.d
 PASSFILE=${LOCAL_CONFD}/.htpasswd
 
-docker stop holometry
-docker rm holometry
+docker stop holometry >> /dev/null
+docker rm holometry >> /dev/null
 
 # First time running, configure authentication for Kibana
 if [ ! -d ${LOCAL_CONFD} ]
